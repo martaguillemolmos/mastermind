@@ -1,6 +1,8 @@
-let arrayMaster = ['green', 'yellow', 'red', 'blue'];
 
 let paleta = [];
+let userName = localStorage.getItem('name');
+console.log(userName);
+
 let localColor = localStorage.getItem('colorespartida');
 
 console.log(localColor.split(','))
