@@ -1,0 +1,37 @@
+.coloreselegidos{
+    height: 4em;
+    width: 4em;
+}
+
+#mastermind{
+    height: 30em;
+    width: 30em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1em solid black;
+}
+#contenedoresvacios{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    height: 4em;
+    width: 4em;
+    border: 1em solid black;
+}
+.check{
+    height: 2em;
+    width: 2em;
+    border:1em solid black;
+}
+#comprobador{
+    display: flex;
+}

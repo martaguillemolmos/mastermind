@@ -1,0 +1,33 @@
+
+#bottom-start{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background-color: aqua;
+}
+#play{
+    height: 5em;
+    width: 10em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+#about{
+    height: 5em;
+    width: 10em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+
+}
+a{
+    text-decoration: none;
+}
