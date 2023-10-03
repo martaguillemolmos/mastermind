@@ -1,15 +1,14 @@
 
-let paleta = [];
 let userName = localStorage.getItem('name');
 console.log(userName);
-
 let localColor = localStorage.getItem('colorespartida');
+let intentos = 2;
+
 
 console.log(localColor.split(','))
 document.addEventListener("DOMContentLoaded", function(){
     
     crearPaleta();
-    crearMind(paleta);
     var coloreselegidos = document.querySelectorAll(".coloreselegidos");
     var contenedores = [
         document.getElementById("contenedor1"),
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 indiceArrayContenedor++; 
 
                 if (indiceArrayContenedor === contenedores.length) {
-                    verificarColores(coloresSeleccionados);
+                    
                 }
             } else {
                 alert('Tienes que seleccionar un color')
@@ -84,17 +83,80 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         return coloresHex
     }
-    // Funcion para desordenar paleta, crear Mastermind
-    
-    function crearMind(paleta) {
-        let patron = paleta.sort(function() {
-            return 0.5 - Math.random()
-        
-        })
-        localStorage.setItem('menteMaster', patron);
+
+   
+    let patron = localStorage.getItem('menteMaster').split(',');
+    console.log("aqui fuera el patron ", patron);
+
+    const boton = document.getElementById('botonValidar');
+
+    boton.addEventListener("click", function () {
+        if (coloresSeleccionados.length === 4){
+            comprobar(patron , coloresSeleccionados)
+        } else{
+            alert("Debes rellenar todos los colores")
+        }
+
+    });
+
+  
+    function comprobar(patron, coloresSeleccionados) {
         console.log(patron)
+        console.log(coloresSeleccionados);
+        intentos--;
+        let errores = 0;
+        if(intentos >= 0){
+            for (let i = 0; i < 4; i++) {
+                let check = document.getElementById(`check${i}`)
+                if (patron[i] === coloresSeleccionados[i]) {
+                    check.style.backgroundColor = 'black';
+                    console.log("este es", patron);
+                    console.log("este es", coloresSeleccionados);
+                } else {
+                    errores++;
+                    check.style.backgroundColor = 'blue';
+                }
+            } 
+            if( errores > 0){
+                if(intentos === 0){
+                    //Has perdido la partida
+                }
+                //Borrar los elementos contenedores
+                    visualizarIntento();
+                    resetIntentos(coloresSeleccionados)
+                // alert(`Has perdido un intento, te quedan ${intentos}` );
+            } else {
+                // alert("Has ganado");
+            }
+        } 
+
+        console.log(intentos)
+
+       
     }
+
+    function resetIntentos(coloresSeleccionados) {
+        for (let i = 0; i < 4; i++) {
+            let check = document.getElementById(`check${i}`)
+            check.style.backgroundColor = 'white';
+        } 
+        coloresSeleccionados =[]
+    }
+
+    function visualizarIntento() {
+        let divIntentos = document.getElementById('intentos');
+        for (let i = 0; i < 4; i++) {
+            let check = document.getElementById(`check${i}`);
+            var newDiv = document.createElement("div");
+            newDiv.style.backgroundColor = check.style.backgroundColor;
+            newDiv.className = "contenedor";
+            divIntentos.appendChild(newDiv); //añade texto al 
+            console.log(check.style.backgroundColor);
+        } 
+    }
+    
 });
+
 
 
 
