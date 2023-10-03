@@ -1,11 +1,11 @@
 .coloreselegidos{
-    height: 4em;
-    width: 4em;
+    height: 3em;
+    width: 3em;
 }
 
 #mastermind{
-    height: 30em;
-    width: 30em;
+    height: 20em;
+    width: 20em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,8 +23,8 @@
     align-items: center;
 }
 .contenedor{
-    height: 4em;
-    width: 4em;
+    height: 3em;
+    width: 3em;
     border: 1em solid black;
 }
 .check{
@@ -33,5 +33,15 @@
     border:1em solid black;
 }
 #comprobador{
+    display: flex;
+}
+
+#contenedorIntentos{
+    height: 20em;
+    width: 20em;
+    background-color: red;
+}
+
+#todo{
     display: flex;
 }

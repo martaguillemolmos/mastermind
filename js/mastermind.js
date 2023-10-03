@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var coloreselegidos = document.querySelectorAll(".coloreselegidos");
     var contenedores = [
+        document.getElementById("contenedor0"),
         document.getElementById("contenedor1"),
         document.getElementById("contenedor2"),
-        document.getElementById("contenedor3"),
-        document.getElementById("contenedor4")
+        document.getElementById("contenedor3")
     ];
     var selectColor = false;
     var coloresSeleccionados = [];
@@ -144,25 +144,48 @@ document.addEventListener("DOMContentLoaded", function(){
        
     }
 
-    function resetIntentos(coloresSeleccionados) {
+    function resetIntentos() {
         for (let i = 0; i < 4; i++) {
             let check = document.getElementById(`check${i}`)
+            let patron = document.getElementById(`contenedor${i}`)
             check.style.backgroundColor = 'white';
+            patron.style.backgroundColor = 'white';
         } 
+        indiceArrayContenedor = 0
         coloresSeleccionados =[]
+        console.log(coloresSeleccionados)
     }
 
     function visualizarIntento() {
-        let divIntentos = document.getElementById('intentos');
+        let contenedor = document.getElementById(`contenedorIntentos`);
+
+        let newDivFallidos = document.createElement("div");
+        newDivFallidos.id = "intentosFallidos";
+        let intentosCheck = document.createElement("div");
+        let intentosPatron = document.createElement("div");
+        // let intentosCheck = document.getElementById('intentosCheck');
+        // let intentosPatron = document.getElementById('intentosPatron');
+        newDivFallidos.id = "intentosFallidos"
         for (let i = 0; i < 4; i++) {
             let check = document.getElementById(`check${i}`);
-            var newDiv = document.createElement("div");
-            newDiv.style.backgroundColor = check.style.backgroundColor;
-            newDiv.className = "contenedor";
-            divIntentos.appendChild(newDiv); //añade texto al 
+            let patron = document.getElementById(`contenedor${i}`);
+            var newDivCheck = document.createElement("div");
+            var newDivPatron = document.createElement("div");
+            newDivCheck.style.backgroundColor = check.style.backgroundColor;
+            newDivCheck.className = "contenedor";
+            intentosCheck.appendChild(newDivCheck); 
+            newDivPatron.style.backgroundColor = patron.style.backgroundColor;
+            newDivPatron.className = "contenedor";
+            intentosPatron.appendChild(newDivPatron); 
             console.log(check.style.backgroundColor);
         } 
+        newDivFallidos.appendChild(intentosPatron);
+        newDivFallidos.appendChild(intentosCheck);
+
+        contenedor.appendChild(newDivFallidos);
+
     }
+
     
 });
 
