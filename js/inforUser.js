@@ -26,7 +26,6 @@ botonEnviar.addEventListener('click', (event) =>{
     } else {
         localStorage.setItem('name', nameInput.value);
         localStorage.setItem ('colorespartida', arrayCajas);
-        crearMind(arrayCajas);
         window.location.href = './mastermind.html'
     }
 });
@@ -34,17 +33,19 @@ botonEnviar.addEventListener('click', (event) =>{
 function asignarColorYGuardarEnLocalStorage(caja, colorSeleccionado) {
     colorSeleccionado.addEventListener('change', () => {
        console.log(colorSeleccionado)
-        if(colorSeleccionado.value !== '#ffffff'){
+       if(arrayCajas.includes(colorSeleccionado.value) ){
+        alert ("Este color ya está siendo utilizado")
+        return;
+       } else if( colorSeleccionado.value === '#ffffff'){
+        alert("El color blanco no está permitido");
+        return;
+       } else
+
+       
             caja.style.backgroundColor = colorSeleccionado.value;
             console.log("el nombre de la caja",colorSeleccionado.name)
-            arrayCajas[colorSeleccionado.name] = colorSeleccionado.value; 
-        return;
-        } else{
-            alert("El color blanco no está permitido");
-            colorSeleccionado.value = '#000000';
-        return;
-        }
-    
+            arrayCajas[colorSeleccionado.name] = colorSeleccionado.value;         
+    console.log(arrayCajas)
     });
   }
 
@@ -53,7 +54,7 @@ asignarColorYGuardarEnLocalStorage(caja2, colorSeleccionado2);
 asignarColorYGuardarEnLocalStorage(caja3, colorSeleccionado3);
 asignarColorYGuardarEnLocalStorage(caja4, colorSeleccionado4);
 
-function todosColoresAsignados ( arrayColores){
+function todosColoresAsignados (arrayColores){
     console.log("El array", arrayColores);
     let errores = 0;
     for (let index = 0; index < arrayColores.length; index++) {
@@ -62,8 +63,9 @@ function todosColoresAsignados ( arrayColores){
         }
         
     };
-    console.log(errores)
-    if (errores >0 && arrayColores.length <4){
+    console.log(errores);
+    console.log(arrayColores.length)
+    if (errores >0 || arrayColores.length <4){
         return true
         
     } else {
@@ -71,16 +73,9 @@ function todosColoresAsignados ( arrayColores){
     }
 // Aquí tendría que hacer la lógica para que 
 }
-     // Funcion para desordenar paleta, crear Mastermind
-function crearMind(paleta) {
-    let patron = paleta.sort(function() {
-            return 0.5 - Math.random()
-        
-    })
-    localStorage.setItem('menteMaster', patron);
-    console.log("este es el patron", patron);
-}
-    
+
+
+
 
 
 

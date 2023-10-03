@@ -1,4 +1,4 @@
-
+let patron = [];
 let userName = localStorage.getItem('name');
 console.log(userName);
 let localColor = localStorage.getItem('colorespartida');
@@ -7,8 +7,9 @@ let intentos = 2;
 
 console.log(localColor.split(','))
 document.addEventListener("DOMContentLoaded", function(){
-    
+
     crearPaleta();
+
     var coloreselegidos = document.querySelectorAll(".coloreselegidos");
     var contenedores = [
         document.getElementById("contenedor1"),
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
             newDiv.className = "coloreselegidos";
             paletaElemento.appendChild(newDiv); //añade texto al div creado.
         }
-       
+        crearPatron(paleta);
         console.log(paletaElemento)
     }
 
@@ -85,9 +86,17 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
    
-    let patron = localStorage.getItem('menteMaster').split(',');
-    console.log("aqui fuera el patron ", patron);
 
+// Funcion para desordenar paleta, crear Mastermind
+    function crearPatron(paleta) {
+    let paletadesordenada = paleta.sort(function() {
+            return 0.5 - Math.random()
+        
+    })
+    patron = paletadesordenada;
+    console.log("este es el patron", patron);
+}
+    
     const boton = document.getElementById('botonValidar');
 
     boton.addEventListener("click", function () {
