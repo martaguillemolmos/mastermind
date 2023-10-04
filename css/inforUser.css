@@ -76,6 +76,7 @@ h1 {
 }
 
 input[type="text"] {
+  height: 1.5em;;
   background-color: transparent;
   border: 0.12em white solid;
   border-radius: 0.3em;
