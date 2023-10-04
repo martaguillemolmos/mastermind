@@ -5,33 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mastermind by Marta Guillem</title>
     <link href="../css/inforUser.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="name">
-      <div>Name</div>
-      <div>
-        <input type="text" maxlength="20" name="" id="nameUser" />
+    <div class="contenedorPrincipal">
+      <div class="fotoMaster">
+        <img src="/img/masterMind.png">
+
+        <h1>Mastermind</h1>
+        </div>
+     
+      <div class="name">
+        <div class="text-colors">Introduce nombre</div>
+        <div>
+          <input type="text" maxlength="20" name="" id="nameUser" />
+        </div>
       </div>
-    </div>
+      <p class="text-colors" id="nivelDificultad">Nivel de dificultad</p>
+      <div class="niveles">
+        <div class="botonNivel">Fácil</div>
+        <div class="botonNivel">Intermedio</div>
+        <div class="botonNivel">Difícil</div>
 
-    <div class="contenedor-colores">
-      <div class="text-colors">Escoge los colores:</div>
-      <div class="boxColors">
-        <input type="color" name="0" id="colorSeleccionado1" />
-        <div class="caja" id="caja1"></div>
-        <input type="color" name="1" id="colorSeleccionado2" />
-        <div class="caja" id="caja2"></div>
-        <input type="color" name="2" id="colorSeleccionado3" />
-        <div class="caja" id="caja3"></div>
-        <input type="color" name="3" id="colorSeleccionado4" />
-        <div class="caja" id="caja4"></div>
       </div>
+      <div class="contenedor-colores">
+        <div class="text-colors">Selecciona los colores</div>
+        <div class="boxColors">
+          <div class="cajaSeleccion">
+            <div class="caja" id="caja1"></div>
+            <input type="color" name="0" id="colorSeleccionado1" />
+          </div>
+          <div class="cajaSeleccion">
+            <div class="caja" id="caja2"></div>
+            <input type="color" name="1" id="colorSeleccionado2" />
+          </div>
+          <div class="cajaSeleccion">
+            <div class="caja" id="caja3"></div>
+            <input type="color" name="2" id="colorSeleccionado3" />
+          </div>
+          <div class="cajaSeleccion">
+            <div class="caja" id="caja4"></div>
+            <input type="color" name="3" id="colorSeleccionado4" />
+          </div>
+        </div>
+      </div>
+      <div id="botonenviar">Empezar a jugar</div>
     </div>
-    
-    
-      <div id="botonenviar">ENVIAR</div>
-
-
     <script src="../js/inforUser.js"></script>
   </body>
 </html>

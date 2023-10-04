@@ -1,34 +1,228 @@
-.boxColors{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 4em;
-}
-.caja{
-    height: 5em;
-    width: 5em;
-    border: 0.5em solid black;
+@media only screen and (max-width: 990px) {
+  html {
+    font-size: 0.7em;
+  }
 }
 
-.diferentesNiveles{
-    height: 2em;
-    width: 4em;
-    background-color: aqua;
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 0.5em;
+  }
 }
 
-#botonenviar{
-height: 5em;
-width: 10em;
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: center;
-align-items: center;
-background-color: blue;
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 0.33em;
+  }
 }
 
-a{
-    text-decoration: none;
+body {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(180, 127, 58);
+  background: -moz-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+  background: linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b47f3a", endColorstr="#fcf745", GradientType=1);
+  background-size: auto;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorPrincipal {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-right: 5.5em;
+  gap: 2em;
+}
+
+.fotoMaster {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 10em;
+  height: 10em;
+}
+
+h1 {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 3em;
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
+
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1em;
+  margin-bottom: -2em;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: 0.12em white solid;
+  border-radius: 0.3em;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
+}
+
+.niveles{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: -2em;
+}    
+
+.botonNivel{
+  width: 6em;
+  height: 2.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0.12em white solid;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.1em;
+  color: black;
+  border-radius: 0.5em;
+}
+.botonNivel:hover {
+  background-color: #f0f0f042;
+  color: #f75701;
+  font-size: 1.3em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.contenedor-colores {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1.5em;
+}
+
+.boxColors {
+  width: 100wh;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.cajaSeleccion {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.caja {
+  height: 5em;
+  width: 5em;
+  border: 0.2em solid black;
+  border-radius: 50%;
+  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
+
+}
+
+input[type="color"] {
+  display: flex;
+  justify-content: center;
+  width: 2em;
+  height: 1.5em;
+  margin-top: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="color"]:focus {
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.text-colors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.4em;
+}
+
+.diferentesNiveles {
+  height: 2em;
+  width: 4em;
+  background-color: aqua;
+}
+
+#botonenviar {
+  height: 3em;
+  width: 10em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0.12em white solid;
+  color: black;
+  border-radius: 0.5em;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.2em;
+  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
+
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s;
+  transition: font-size 0.4s;
+  transition: box-shadow 0.4s;
+
+}
+
+#botonenviar:hover {
+  background-color: #f0f0f042;
+  color: #f75701;
+  font-size: 1.3em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+
+}
+
+a {
+  text-decoration: none;
 }
