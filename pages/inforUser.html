@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mastermind by Marta Guillem</title>
     <link href="../css/inforUser.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="contenedorPrincipal">
       <div class="fotoMaster">
-        <img src="/img/masterMind.png">
+        <img src="/img/masterMind.png" id="imagenPrincipal" />
 
         <h1>Mastermind</h1>
-        </div>
-     
+      </div>
+
       <div class="name">
         <div class="text-colors">Introduce nombre</div>
         <div>
@@ -28,7 +31,6 @@
         <div class="botonNivel">Fácil</div>
         <div class="botonNivel">Intermedio</div>
         <div class="botonNivel">Difícil</div>
-
       </div>
       <div class="contenedor-colores">
         <div class="text-colors">Selecciona los colores</div>
@@ -52,7 +54,16 @@
         </div>
       </div>
       <div id="botonenviar">Empezar a jugar</div>
+      <a href="/pages/about.html">
+        <div class="preguntar">
+          <abbr
+            title="Introduce los datos para empezar el juego. Si no recuerdas cómo se juega, haz click y revisa las reglas del juego."
+            ><img src="/img/soportePreguntas.png" id="imagenAyuda"
+          /></abbr>
+        </div>
+      </a>
     </div>
+
     <script src="../js/inforUser.js"></script>
   </body>
 </html>
