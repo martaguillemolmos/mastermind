@@ -148,8 +148,8 @@ document.addEventListener("DOMContentLoaded", function(){
         for (let i = 0; i < 4; i++) {
             let check = document.getElementById(`check${i}`)
             let patron = document.getElementById(`contenedor${i}`)
-            check.style.backgroundColor = 'white';
-            patron.style.backgroundColor = 'white';
+            check.style.backgroundColor = '';
+            patron.style.backgroundColor = '';
         } 
         indiceArrayContenedor = 0
         coloresSeleccionados =[]
