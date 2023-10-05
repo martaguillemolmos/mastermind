@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", function(){
             return 0.5 - Math.random()
         
     })
-    patron = paletadesordenada;
-    console.log("este es el patron", patron);
+    patron = paletadesordenada.slice(0,4);
+    console.log("este es el patron recortador", patron);
 }
     
     const boton = document.getElementById('botonValidar');
@@ -163,8 +163,6 @@ document.addEventListener("DOMContentLoaded", function(){
         newDivFallidos.id = "intentosFallidos";
         let intentosCheck = document.createElement("div");
         let intentosPatron = document.createElement("div");
-        // let intentosCheck = document.getElementById('intentosCheck');
-        // let intentosPatron = document.getElementById('intentosPatron');
         newDivFallidos.id = "intentosFallidos"
         for (let i = 0; i < 4; i++) {
             let check = document.getElementById(`check${i}`);

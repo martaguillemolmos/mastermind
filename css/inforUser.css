@@ -132,7 +132,7 @@ input[type="text"] {
   display: none;
 }
 
-.boxColors {
+#boxColors {
   width: 100wh;
   height: auto;
   display: flex;
