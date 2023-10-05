@@ -2,7 +2,7 @@ let patron = [];
 let userName = localStorage.getItem('name');
 console.log(userName);
 let localColor = localStorage.getItem('colorespartida');
-let intentos = 2;
+let intentos = localStorage.getItem('intento');
 
 
 console.log(localColor.split(','))
@@ -128,14 +128,14 @@ document.addEventListener("DOMContentLoaded", function(){
             } 
             if( errores > 0){
                 if(intentos === 0){
-                    //Has perdido la partida
+                    window.location.href = "../pages/loser.html"
                 }
                 //Borrar los elementos contenedores
                     visualizarIntento();
                     resetIntentos(coloresSeleccionados)
                 // alert(`Has perdido un intento, te quedan ${intentos}` );
             } else {
-                // alert("Has ganado");
+                window.location.href = "../pages/win.html"
             }
         } 
 
@@ -188,8 +188,3 @@ document.addEventListener("DOMContentLoaded", function(){
 
     
 });
-
-
-
-
-

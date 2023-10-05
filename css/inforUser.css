@@ -123,13 +123,13 @@ input[type="text"] {
 }
 
 .contenedor-colores {
-  display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
   gap: 1.5em;
+  display: none;
 }
 
 .boxColors {
