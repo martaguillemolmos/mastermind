@@ -28,10 +28,8 @@
     background-size: auto;
     background-repeat: no-repeat;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
+
   #bottom-start{
     display: flex;
     flex-wrap: nowrap;
@@ -61,6 +59,29 @@
     background-color: blue;
 
 }
+
+.preguntar{
+  width: 8em ;
+  height: 8em;
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+.preguntar:hover{
+  cursor: pointer;
+  -webkit-transform:scale(1.1);
+  -moz-transform:scale(1.1);
+  -ms-transform:scale(1.1);
+  -o-transform:scale(1.1);
+  transform:scale(1.1);
+}
+
+#imagenAyuda{
+  width: 8em;
+  height: 8em;
+}
+
 a{
     text-decoration: none;
 }

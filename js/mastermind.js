@@ -11,15 +11,11 @@ document.addEventListener("DOMContentLoaded", function(){
     crearPaleta();
 
     var coloreselegidos = document.querySelectorAll(".coloreselegidos");
-    var contenedores = [
-        document.getElementById("contenedor0"),
-        document.getElementById("contenedor1"),
-        document.getElementById("contenedor2"),
-        document.getElementById("contenedor3")
-    ];
+ 
+    var contenedores = document.querySelectorAll(".contenedor");
+    console.log(contenedores)
     var selectColor = false;
-    var coloresSeleccionados = [];
-    var indiceArrayContenedor = 0; 
+    var coloresSeleccionados = ['', '', '', ''];
 
     coloreselegidos.forEach(function(colorDiv){
         console.log("Aquí funciona")
@@ -31,26 +27,16 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     });
 
-    contenedores.forEach((contenedor, index) => {
-        contenedor.addEventListener("click", () => {
-            //Validación si el color no lo has seleccionado 
-            if (selectColor !== false && index === indiceArrayContenedor) {
-                if(existeColor(selectColor, coloresSeleccionados )){
-                    alert("ya existe dicho color en el array, elige otro color");
-                    return;
-                }
-                console.log("Aqui entra",selectColor);
-                contenedor.style.backgroundColor = selectColor;
-                coloresSeleccionados[indiceArrayContenedor] = selectColor;
-                console.log(coloresSeleccionados);
-                indiceArrayContenedor++; 
 
-                if (indiceArrayContenedor === contenedores.length) {
-                    
-                }
-            } else {
-                alert('Tienes que seleccionar un color')
-            }
+//Función para coger los colores y almacenarlas dentro de la array. Pudiendo modificar el color.
+    contenedores.forEach((contenedor) => {
+        contenedor.addEventListener("click", () => {
+            const id= contenedor.getAttribute('id')  
+                console.log(coloresSeleccionados);
+                if (contenedor.style.backgroundColor = selectColor){
+                coloresSeleccionados[id[id.length -1]] = selectColor;
+                console.log(coloresSeleccionados)
+            }               
         });
     });
 
