@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function(){
         contenedor.addEventListener("click", () => {
             const id= contenedor.getAttribute('id')  
                 console.log(coloresSeleccionados);
-                if (contenedor.style.backgroundColor = selectColor){
+                contenedor.style.backgroundColor = selectColor
                 coloresSeleccionados[id[id.length -1]] = selectColor;
                 console.log(coloresSeleccionados)
-            }               
+                           
         });
     });
 
