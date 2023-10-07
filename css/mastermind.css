@@ -1,139 +1,209 @@
 @media only screen and (max-width: 990px) {
-    html {
-      font-size: 0.7em;
-    }
+  html {
+    font-size: 0.7em;
   }
-  
-  @media only screen and (max-width: 750px) {
-    html {
-      font-size: 0.5em;
-    }
-  }
-  
-  @media only screen and (max-width: 680px) {
-    html {
-      font-size: 0.33em;
-    }
-  }
-  
-  body {
-    width: 100vw;
-    height: 100vh;
-    background: rgb(180, 127, 58);
-    background: -moz-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
-    background: linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b47f3a", endColorstr="#fcf745", GradientType=1);
-    background-size: auto;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .contenedorSeleccion{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    gap:3em;
-}
-#paletaColores{
-    width: 23em;
-    height: 7.5em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap:1em;
-    background-color: rgb(211, 179, 104);
-    border: 0.2em solid black;
-    border-radius: 1em;
-    box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
-}
-#paletaColores:hover{
-    cursor:pointer;
-}
-.coloreselegidos{
-    height: 4em;
-    width: 4em;
-    border: 0.2em solid black;
-    border-radius: 50%;
-    box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
-   
-}
-#mastermind{
-    height: 20em;
-    width: 20em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    border: 1em solid black;
-}
-#contenedoresvacios{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-.contenedor{
-    height: 3em;
-    width: 3em;
-    border: 1em solid black;
-}
-.check{
-    height: 2em;
-    width: 2em;
-    border:1em solid black;
-}
-#comprobador{
-    display: flex;
 }
 
-#contenedorIntentos{
-    height: 20em;
-    width: 20em;
-    background-color: red;
-}
-
-#todo{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-
-#botonValidar{
-    width: 6em;
-    height: 2.5em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: 0.12em white solid;
-    font-family: 'Urbanist', sans-serif;
-    font-size: 1.1em;
-    color: black;
-    border-radius: 0.5em;
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 0.5em;
   }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 0.33em;
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(180, 127, 58);
+  background: -moz-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+  background: linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b47f3a", endColorstr="#fcf745", GradientType=1);
+  background-size: auto;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+p {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.2em;
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
+}
+.parteSuperior {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.parteSuperiorVacia {
+  width: 40em;
+  height: 8em;
+}
+
+.contenedorIntentos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.intentos {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.parteIntentos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#numeroIntentos{
+  font-family: 'Urbanist', sans-serif;
+  font-size: 2em;
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
+}
+.nivelAnimo {
+  width: 8em;
+  height: 8em;
+}
+
+.contenedorSeleccion {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#paletaColores {
+  width: 23em;
+  height: 7.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1em;
+  background-color: rgb(211, 179, 104);
+  border: 0.2em solid black;
+  border-radius: 1em;
+  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
+}
+
+#paletaColores:hover {
+  cursor: pointer;
+}
+
+.coloreselegidos {
+  height: 4em;
+  width: 4em;
+  border: 0.2em solid black;
+  border-radius: 50%;
+  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
+
+}
+
+#mastermind {
+  height: 20em;
+  width: 20em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 1em solid black;
+}
+
+.mastermindJugador {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+#contenedoresvacios {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor {
+  height: 3em;
+  width: 3em;
+  border: 1em solid black;
+}
+
+.check {
+  height: 2em;
+  width: 2em;
+  border: 1em solid black;
+}
+
+#comprobador {
+  display: flex;
+}
+
+#contenedorIntentos {
+  height: 20em;
+  width: 20em;
+  background-color: red;
+}
+
+#todo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+#botonValidar {
+  width: 6em;
+  height: 2.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0.12em white solid;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.1em;
+  color: black;
+  border-radius: 0.5em;
+}
+
 #botonValidar:hover {
-    background-color: #f0f0f042;
-    color: #f75701;
-    font-size: 1.2em;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-  }
+  background-color: #f0f0f042;
+  color: #f75701;
+  font-size: 1.2em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}

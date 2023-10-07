@@ -3,19 +3,21 @@ let userName = localStorage.getItem('name');
 console.log(userName);
 let localColor = localStorage.getItem('colorespartida');
 let intentos = localStorage.getItem('intento');
+numeroIntentos.textContent = intentos
 
 
 console.log(localColor.split(','))
 document.addEventListener("DOMContentLoaded", function(){
 
     crearPaleta();
-
     var coloreselegidos = document.querySelectorAll(".coloreselegidos");
  
     var contenedores = document.querySelectorAll(".contenedor");
     console.log(contenedores)
     var selectColor = false;
     var coloresSeleccionados = ['', '', '', ''];
+    let numeroIntentos = document.getElementById('numeroIntentos');
+
 
     coloreselegidos.forEach(function(colorDiv){
         console.log("Aquí funciona")
@@ -85,8 +87,8 @@ document.addEventListener("DOMContentLoaded", function(){
     
     const boton = document.getElementById('botonValidar');
     boton.addEventListener("click", function () {
-        if (coloresSeleccionados.value != null){
-            comprobar(patron , coloresSeleccionados)
+        if (coloresSeleccionados.every(color => color !== '')) {
+            comprobar(patron, coloresSeleccionados);
         } else{
             alert("Debes rellenar todos los colores")
         }
@@ -116,18 +118,29 @@ document.addEventListener("DOMContentLoaded", function(){
                     window.location.href = "../pages/loser.html"
                 }
                 //Borrar los elementos contenedores
+                    numeroIntentos.textContent = intentos
                     visualizarIntento();
                     resetIntentos(coloresSeleccionados)
+                    cambioImagen();
                 // alert(`Has perdido un intento, te quedan ${intentos}` );
             } else {
                 window.location.href = "../pages/win.html"
             }
         } 
-
         console.log(intentos)
 
-       
     }
+    
+    function cambioImagen () {
+        var imgElement = document.getElementById('animo');
+        var mitadIntento = localStorage.getItem ('intento') / 2;
+        
+        if (intentos >= mitadIntento){
+            imgElement.src = 'alto.png';
+        } else {
+            imgElement.src ='bajo.png';
+        }  
+    }     
 
     function resetIntentos() {
         for (let i = 0; i < 4; i++) {
@@ -136,8 +149,7 @@ document.addEventListener("DOMContentLoaded", function(){
             check.style.backgroundColor = '';
             patron.style.backgroundColor = '';
         } 
-        indiceArrayContenedor = 0
-        coloresSeleccionados =[]
+        coloresSeleccionados = ['', '', '', ''];
         console.log(coloresSeleccionados)
     }
 
@@ -168,6 +180,4 @@ document.addEventListener("DOMContentLoaded", function(){
         contenedor.appendChild(newDivFallidos);
 
     }
-
-    
 });
