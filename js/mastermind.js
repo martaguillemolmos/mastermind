@@ -84,9 +84,8 @@ document.addEventListener("DOMContentLoaded", function(){
 }
     
     const boton = document.getElementById('botonValidar');
-
     boton.addEventListener("click", function () {
-        if (coloresSeleccionados.length === 4){
+        if (coloresSeleccionados.value != null){
             comprobar(patron , coloresSeleccionados)
         } else{
             alert("Debes rellenar todos los colores")
