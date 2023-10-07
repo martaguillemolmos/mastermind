@@ -1,65 +1,119 @@
-
 @media only screen and (max-width: 990px) {
-    html {
-      font-size: 0.7em;
-    }
+  html {
+    font-size: 0.7em;
   }
-  
-  @media only screen and (max-width: 750px) {
-    html {
-      font-size: 0.5em;
-    }
-  }
-  
-  @media only screen and (max-width: 680px) {
-    html {
-      font-size: 0.33em;
-    }
-  }
-  
-  body {
-    width: 100vw;
-    height: 100vh;
-    background: rgb(180, 127, 58);
-    background: -moz-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
-    background: linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b47f3a", endColorstr="#fcf745", GradientType=1);
-    background-size: auto;
-    background-repeat: no-repeat;
-    overflow: hidden;
-  }
-
-  #bottom-start{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    background-color: aqua;
 }
-#play{
-    height: 5em;
-    width: 10em;
-    display: flex;
+
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 0.33em;
+  }
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+  background-size: auto;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.contenedorPrincipal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 2em;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+.fotoMaster {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#imagenPrincipal {
+  width: 20em;
+  height: 20em;
+  transform: scale(0.8); /* Tamaño inicial de escala (ajusta según tus necesidades) */
+  transition: transform 2s ease;
+}
+
+h1 {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 4em;
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
+
+}
+
+.botonIncio{
+  display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    align-content: center;
     justify-content: center;
-    align-items: center;
-    background-color: blue;
-}
-#about{
-    height: 5em;
-    width: 10em;
-    display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
     align-items: center;
-    background-color: blue;
+    gap: 10em;
+}
+
+p {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.2em;
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
 
 }
 
+.boton {
+  height: 4em;
+  width: 9.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0.12em white solid;
+  color: black;
+  border-radius: 0.5em;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.1em;
+  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s;
+  transition: font-size 0.4s;
+  transition: box-shadow 0.4s;
+}
+
+.boton:hover {
+  background-color: #f0f0f042;
+  color: #f75701;
+  font-size: 1.2em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+.parteInferior {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: space-around;
+}
 .preguntar{
   width: 8em ;
   height: 8em;

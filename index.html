@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mastermind by Marta Guillem </title>
     <link href="./css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet"/>
 
 </head>
 <body>
-    <div id="bottom-start">
-        <a href="./pages/inforUser.html"><div id= "play">PLAY</div></a>
-        <a href="./pages/about.html"><div id= "about">ABOUT</div></a>
+  <div class="fotoMaster">
+    <img src="/img/mastermindInicio.svg" id="imagenPrincipal">
+    <h1>Mastermind</h1>
+  </div>
+    <div class="botonIncio">
+      <a href="./pages/about.html"><div class= "boton"><p>Instrucciones</p></div></a>
+        <a href="./pages/inforUser.html"><div class="boton"><p>Jugar</p></div></a>
     </div>
+    <div class="parteInferior">
     <div class="preguntar">
         <abbr
-          title="Hola, soy Marta. A lo largo del juego, haz click sobre mí para obtener más información."
+          title="Hola, soy Marta. Durante el juego, pon el pulsador sobre mí para obtener más información."
           ><img src="/img/saludoInicio.png" id="imagenAyuda"
         /></abbr>
       </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
