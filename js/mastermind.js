@@ -30,16 +30,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 //Función para coger los colores y almacenarlas dentro de la array. Pudiendo modificar el color.
-    contenedores.forEach((contenedor) => {
-        contenedor.addEventListener("click", () => {
-            const id= contenedor.getAttribute('id')  
-                console.log(coloresSeleccionados);
-                contenedor.style.backgroundColor = selectColor
-                coloresSeleccionados[id[id.length -1]] = selectColor;
-                console.log(coloresSeleccionados)
-                           
-        });
+contenedores.forEach((contenedor) => {
+    contenedor.addEventListener("click", () => {
+        const id = contenedor.getAttribute('id');
+        console.log(coloresSeleccionados);
+        if (!coloresSeleccionados.includes(selectColor)) {
+            contenedor.style.backgroundColor = selectColor;
+            coloresSeleccionados[id[id.length - 1]] = selectColor;
+            console.log(coloresSeleccionados);
+        } else {
+            alert("Escoge un color diferente");
+        }
     });
+});
 
     //Función para crear elementos dependientes de la selección del usuario
     // div paleta de colores
