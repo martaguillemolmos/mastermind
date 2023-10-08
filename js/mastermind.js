@@ -5,7 +5,6 @@ let localColor = localStorage.getItem('colorespartida');
 let intentos = localStorage.getItem('intento');
 numeroIntentos.textContent = intentos
 
-
 console.log(localColor.split(','))
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var selectColor = false;
     var coloresSeleccionados = ['', '', '', ''];
     let numeroIntentos = document.getElementById('numeroIntentos');
-
+    let resetLocal = document.getElementById('botonVolver');
 
     coloreselegidos.forEach(function(colorDiv){
         console.log("Aquí funciona")
@@ -119,9 +118,10 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
                 //Borrar los elementos contenedores
                     numeroIntentos.textContent = intentos
+                    let contenedorImagen = document.getElementById("intento");
+                
                     visualizarIntento();
                     resetIntentos(coloresSeleccionados)
-                    cambioImagen();
                 // alert(`Has perdido un intento, te quedan ${intentos}` );
             } else {
                 window.location.href = "../pages/win.html"
@@ -130,18 +130,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log(intentos)
 
     }
-    
-    function cambioImagen () {
-        var imgElement = document.getElementById('animo');
-        var mitadIntento = localStorage.getItem ('intento') / 2;
         
-        if (intentos >= mitadIntento){
-            imgElement.src = 'alto.png';
-        } else {
-            imgElement.src ='bajo.png';
-        }  
-    }     
-
     function resetIntentos() {
         for (let i = 0; i < 4; i++) {
             let check = document.getElementById(`check${i}`)
@@ -155,29 +144,31 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function visualizarIntento() {
         let contenedor = document.getElementById(`contenedorIntentos`);
-
         let newDivFallidos = document.createElement("div");
-        newDivFallidos.id = "intentosFallidos";
+        newDivFallidos.className = "intentosFallidos";
         let intentosCheck = document.createElement("div");
+        intentosCheck.className = "checkFallidos"
         let intentosPatron = document.createElement("div");
-        newDivFallidos.id = "intentosFallidos"
+        intentosPatron.className = "patronFallidos"
         for (let i = 0; i < 4; i++) {
             let check = document.getElementById(`check${i}`);
             let patron = document.getElementById(`contenedor${i}`);
             var newDivCheck = document.createElement("div");
             var newDivPatron = document.createElement("div");
-            newDivCheck.style.backgroundColor = check.style.backgroundColor;
-            newDivCheck.className = "contenedor";
-            intentosCheck.appendChild(newDivCheck); 
             newDivPatron.style.backgroundColor = patron.style.backgroundColor;
             newDivPatron.className = "contenedor";
             intentosPatron.appendChild(newDivPatron); 
+            newDivCheck.style.backgroundColor = check.style.backgroundColor;
+            newDivCheck.className = "check";
+            intentosCheck.appendChild(newDivCheck); 
             console.log(check.style.backgroundColor);
         } 
         newDivFallidos.appendChild(intentosPatron);
         newDivFallidos.appendChild(intentosCheck);
-
         contenedor.appendChild(newDivFallidos);
 
     }
+    resetLocal.addEventListener("click", () => {
+        localStorage.clear();            
+    });
 });

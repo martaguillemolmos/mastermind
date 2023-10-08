@@ -31,23 +31,29 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
 }
+
 p {
   font-family: 'Urbanist', sans-serif;
   font-size: 1.2em;
   text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
 }
+
 .parteSuperior {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.parteSuperiorVacia {
-  width: 40em;
-  height: 8em;
+.emoticono-animo {
+  width: 5em;
+  height: 5em;
 }
 
-.contenedorIntentos {
+.parteSuperiorVacia {
+  width: 40em;
+}
+
+.contadorIntentos {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -58,13 +64,29 @@ p {
 
 .intentos {
   display: flex;
-  flex-direction: column-reverse;
   flex-wrap: nowrap;
   align-content: flex-start;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: row;
+  gap: 0.5em;
 }
 
+.intentosFallidos{
+  height: 5em;
+    width: 25em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 0.3em solid #00000080;
+    border-radius: 2em;
+    gap: 0.5em;
+    background: #d9bb628a;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+}
 .parteIntentos {
   display: flex;
   flex-direction: row;
@@ -72,11 +94,13 @@ p {
   justify-content: center;
   align-items: center;
 }
-#numeroIntentos{
+
+#numeroIntentos {
   font-family: 'Urbanist', sans-serif;
   font-size: 2em;
   text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
 }
+
 .nivelAnimo {
   width: 8em;
   height: 8em;
@@ -89,11 +113,12 @@ p {
   align-content: center;
   align-items: center;
   justify-content: space-evenly;
+  height: 45em;
 }
 
 #paletaColores {
-  width: 23em;
-  height: 7.5em;
+  width: 25em;
+  height: 4em;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -101,10 +126,6 @@ p {
   align-items: center;
   align-content: center;
   gap: 1em;
-  background-color: rgb(211, 179, 104);
-  border: 0.2em solid black;
-  border-radius: 1em;
-  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
 }
 
 #paletaColores:hover {
@@ -112,34 +133,37 @@ p {
 }
 
 .coloreselegidos {
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
   border: 0.2em solid black;
   border-radius: 50%;
   box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
-
 }
 
-#mastermind {
-  height: 20em;
-  width: 20em;
+.diseñoIntento {
+  height: 5.4em;
+  width: 25em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  border: 1em solid black;
-}
+  border: 0.3em solid #00000080;
+  border-radius: 2em;
+  gap: 0.5em;
+  background: #d9bb628a;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.7);
+  }
 
 .mastermindJugador {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
   flex-wrap: nowrap;
+  align-content: center;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1.5em;
 }
 
 #contenedoresvacios {
@@ -149,40 +173,77 @@ p {
   align-content: center;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+  gap: 0.5em;
 }
 
 .contenedor {
   height: 3em;
   width: 3em;
-  border: 1em solid black;
+  border: 0.3em solid black;
+  border-radius: 50%;
 }
-
+.contenedor:hover{
+  cursor: pointer;
+}
 .check {
-  height: 2em;
-  width: 2em;
-  border: 1em solid black;
+  height: 1em;
+  width: 1em;
+  border: 0.25em solid black;
+  border-radius: 50%;
 }
 
 #comprobador {
   display: flex;
+  border-radius: 50%;
+  gap: 0.5em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
+
 
 #contenedorIntentos {
-  height: 20em;
-  width: 20em;
-  background-color: red;
-}
-
-#todo {
+  height: 40em;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 0.3em;
 }
 
+#todo{
+  display: flex;
+  height: 22em;
+  width: 30em;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  border: 0.2em solid white;
+  border-radius: 2em;
+}
+
+.patronFallidos{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.checkFallidos{
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 #botonValidar {
   width: 6em;
   height: 2.5em;
@@ -195,7 +256,7 @@ p {
   background-color: transparent;
   border: 0.12em white solid;
   font-family: 'Urbanist', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: black;
   border-radius: 0.5em;
 }
@@ -206,4 +267,63 @@ p {
   font-size: 1.2em;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   cursor: pointer;
+}
+#botonVolver {
+  height: 3em;
+  width: 10em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0.12em white solid;
+  color: black;
+  border-radius: 0.5em;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.1em;
+  box-shadow: 0em 0em 0.4em rgba(0, 0, 0, 0.237);
+
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s;
+  transition: font-size 0.4s;
+  transition: box-shadow 0.4s;
+}
+.botonesInferiores{
+  display: flex;
+  align-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  }
+.botonVolver:hover {
+  background-color: #f0f0f042;
+  color: #f75701;
+  font-size: 1.2em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+.preguntar{
+  width: 8em ;
+  height: 8em;
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+.preguntar:hover{
+  cursor: pointer;
+  -webkit-transform:scale(1.1);
+  -moz-transform:scale(1.1);
+  -ms-transform:scale(1.1);
+  -o-transform:scale(1.1);
+  transform:scale(1.1);
+}
+
+#imagenAyuda{
+  width: 8em;
+  height: 8em;
+}
+a {
+  text-decoration: none;
 }

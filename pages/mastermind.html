@@ -15,10 +15,12 @@
     <div class="parteSuperior">
       <div class="parteSuperiorVacia"></div>
       <div class="intentos"> 
-        <p><b>Intentos</b> disponibles</p>
-      <div class="contenedorIntentos">
+        <p><b>Intentos</b> disponibles:</p>
+      <div class="contadorIntentos">
         <div id="numeroIntentos"></div>
-        <div id="animo"></div>
+        <div id="animo">
+          <img src="/img/bajo.png" alt="emoticono" class="emoticono-animo">
+        </div>
       </div>
     </div>
     </div>
@@ -26,7 +28,7 @@
       <div id="todo">
         <div id="paletaColores"></div>
         <div class="mastermindJugador">
-          <div id="mastermind">
+          <div id="mastermind" class="diseñoIntento">
             <div id="contenedoresvacios">
               <div id="contenedor0" class="contenedor"></div>
               <div id="contenedor1" class="contenedor"></div>
@@ -43,10 +45,22 @@
           <div id="botonValidar">Validar</div>
         </div>
       </div>
-      <div class="mastermindTablero"></div>
+      <div class="mastermindTablero">
       <div id="contenedorIntentos"></div>
     </div>
-
+    </div>
+  </div>
+    <div class="botonesInferiores">
+      <a href="/index.html">
+        <div id="botonVolver">Volver a inicio</div>  
+      </a>
+      <div class="preguntar">
+        <abbr
+          title="Selecciona los colores con el pulsador y genera tu combinación ganadora.">
+          <img src="/img/soportePreguntas.png" id="imagenAyuda">
+        </abbr>
+      </div>
+    </div>
     <script src="../js/mastermind.js"></script>
   </body>
 </html>
