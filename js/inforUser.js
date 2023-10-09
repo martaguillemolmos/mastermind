@@ -95,7 +95,7 @@ function guardarColorLocalStorage(colores) {
 
 
 
-function todosColoresAsignados(arrayColores) {
+function todosColoresAsignados(arrayColores, numCajas) {
   console.log("El array", arrayColores);
   let errores = 0;
   for (let index = 0; index < arrayColores.length; index++) {
@@ -105,7 +105,7 @@ function todosColoresAsignados(arrayColores) {
   }
   console.log(errores);
   console.log(arrayColores.length);
-  if (errores > 0 || arrayColores.length < 4) {
+  if (errores > 0 || arrayColores.length !== numCajas) {
     return true;
   } else {
     return false;

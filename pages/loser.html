@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instrucciones | Mastermind by Marta</title>
     <link href="../css/loser.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet"/>
 </head>
 <body>
     <div class="total">
     ¡Has perdido!<div id="nombre"></div>
-    <img src="../img/perder.png">
+    <img src="../img/perder.png" class="imagenPrincipal">
     <div class="botonesInferiores">
-        <a href="/index.html">
-          <div class="botonVolver">Inicio</div>  
+        <a href="./mastermind.html">
+          <div class="boton">Volver a jugar</div>  
         </a>
-        <a href="./about.html">   
-        <div class="preguntar">
-          <abbr
-            title="Introduce los datos para empezar el juego. Si no recuerdas cómo se juega, haz click sobre mí y accede a las instrucciones.">
-            <img src="../img/soportePreguntas.png" id="imagenAyuda">
-          </abbr>
-        </div>
-      </a>
+        <a href="/index.html">
+            <div class="boton" id="botonResetear">Salir</div>  
+          </a>
       </div>
     </div>
 </body>
