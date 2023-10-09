@@ -110,9 +110,11 @@ contenedores.forEach((contenedor) => {
                     check.style.backgroundColor = 'black';
                     console.log("este es", patron);
                     console.log("este es", coloresSeleccionados);
-                } else {
+                } else if (patron.includes(coloresSeleccionados[i])) {
                     errores++;
-                    check.style.backgroundColor = 'white';
+                    check.style.backgroundColor = 'white'; 
+                }else {
+                    errores++;
                 }
             } 
             if( errores > 0){
