@@ -1,179 +1,143 @@
 let patron = [];
-let userName = localStorage.getItem('name');
-console.log(userName);
-let localColor = localStorage.getItem('colorespartida');
-let intentos = localStorage.getItem('intento');
-numeroIntentos.textContent = intentos
+let userName = localStorage.getItem("name");
+let localColor = localStorage.getItem("colorespartida");
+let intentos = localStorage.getItem("intento");
+numeroIntentos.textContent = intentos;
 
-console.log(localColor.split(','))
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
+  crearPaleta();
+  var coloreselegidos = document.querySelectorAll(".coloreselegidos");
+  var contenedores = document.querySelectorAll(".contenedor");
+  var selectColor = false;
+  var coloresSeleccionados = ["", "", "", ""];
+  let numeroIntentos = document.getElementById("numeroIntentos");
+  let resetLocal = document.getElementById("botonVolver");
 
-    crearPaleta();
-    var coloreselegidos = document.querySelectorAll(".coloreselegidos");
- 
-    var contenedores = document.querySelectorAll(".contenedor");
-    console.log(contenedores)
-    var selectColor = false;
-    var coloresSeleccionados = ['', '', '', ''];
-    let numeroIntentos = document.getElementById('numeroIntentos');
-    let resetLocal = document.getElementById('botonVolver');
-
-    coloreselegidos.forEach(function(colorDiv){
-        console.log("Aquí funciona")
-        colorDiv.addEventListener("click", function () {
-            console.log("colorDiv", colorDiv.style);
-         
-            console.log("AAAA", rgbToHex (colorDiv.style.backgroundColor))
-            selectColor = rgbToHex (colorDiv.style.backgroundColor);
-        });
+  coloreselegidos.forEach(function (colorDiv) {
+    colorDiv.addEventListener("click", function () {
+      selectColor = rgbToHex(colorDiv.style.backgroundColor);
     });
-
-
-//Función para coger los colores y almacenarlas dentro de la array. Pudiendo modificar el color.
-contenedores.forEach((contenedor) => {
+  });
+  //Función para coger los colores y almacenarlas dentro de la array. Pudiendo modificar el color.
+  contenedores.forEach((contenedor) => {
     contenedor.addEventListener("click", () => {
-        const id = contenedor.getAttribute('id');
-        console.log(coloresSeleccionados);
-        if (!coloresSeleccionados.includes(selectColor)) {
-            contenedor.style.backgroundColor = selectColor;
-            coloresSeleccionados[id[id.length - 1]] = selectColor;
-            console.log(coloresSeleccionados);
+      const id = contenedor.getAttribute("id");
+      if (!coloresSeleccionados.includes(selectColor)) {
+        contenedor.style.backgroundColor = selectColor;
+        coloresSeleccionados[id[id.length - 1]] = selectColor;
+      } else {
+        alert("Escoge un color diferente");
+      }
+    });
+  });
+  //Función para crear elementos dependientes de la selección del usuario
+  // div paleta de colores
+  function crearPaleta() {
+    paleta = localStorage.getItem("colorespartida").split(",");
+    let paletaElemento = document.getElementById("paletaColores");
+    //crea las cajas según la paleta de colores
+    for (let index = 0; index < paleta.length; index++) {
+      var newDiv = document.createElement("div");
+      newDiv.style.backgroundColor = paleta[index];
+      newDiv.className = "coloreselegidos";
+      paletaElemento.appendChild(newDiv); //añade texto al div creado.
+    }
+    crearPatron(paleta);
+  }
+
+  // Función que valida si existe el color en el Array
+  function existeColor(color, array) {
+    return array.includes(color);
+  }
+
+  function rgbToHex(rgb) {
+    var rgbValores = rgb.match(/\d+/g);
+    var coloresHex = "#";
+    for (let i = 0; i < 3; i++) {
+      var valorHex = parseInt(rgbValores[i]).toString(16);
+      coloresHex += valorHex.length === 1 ? "0" + valorHex : valorHex;
+    }
+    return coloresHex;
+  }
+
+  // Funcion para desordenar paleta, crear Mastermind
+  function crearPatron(paleta) {
+    let paletadesordenada = paleta.sort(function () {
+      return 0.5 - Math.random();
+    });
+    patron = paletadesordenada.slice(0, 4);
+  }
+  const boton = document.getElementById("botonValidar");
+  boton.addEventListener("click", function () {
+    if (coloresSeleccionados.every((color) => color !== "")) {
+      comprobar(patron, coloresSeleccionados);
+    } else {
+      alert("Debes rellenar todos los colores");
+    }
+  });
+  function comprobar(patron, coloresSeleccionados) {
+    intentos--;
+    let errores = 0;
+    if (intentos >= 0) {
+      for (let i = 0; i < 4; i++) {
+        let check = document.getElementById(`check${i}`);
+        if (patron[i] === coloresSeleccionados[i]) {
+          check.style.backgroundColor = "black";
+        } else if (patron.includes(coloresSeleccionados[i])) {
+          errores++;
+          check.style.backgroundColor = "white";
         } else {
-            alert("Escoge un color diferente");
+          errores++;
         }
-    });
-});
-
-    //Función para crear elementos dependientes de la selección del usuario
-    // div paleta de colores
-    function crearPaleta(){
-        paleta = localStorage.getItem('colorespartida').split(',');
-        let paletaElemento = document.getElementById('paletaColores');
-        //crea las cajas según la paleta de colores
-        for (let index = 0; index < paleta.length; index++) {
-            var newDiv = document.createElement("div");
-            newDiv.style.backgroundColor = paleta[index];
-            newDiv.className = "coloreselegidos";
-            paletaElemento.appendChild(newDiv); //añade texto al div creado.
+      }
+      if (errores > 0) {
+        if (intentos === 0) {
+          window.location.href = "../pages/loser.html";
         }
-        crearPatron(paleta);
-        console.log(paletaElemento)
+        numeroIntentos.textContent = intentos;
+        let contenedorImagen = document.getElementById("intento");
+        visualizarIntento();
+        resetIntentos(coloresSeleccionados);
+      } else {
+        window.location.href = "../pages/win.html";
+      }
     }
+  }
 
-    // Función que valida si existe el color en el Array
-    function existeColor (color, array){
-        return array.includes(color);
+  function resetIntentos() {
+    for (let i = 0; i < 4; i++) {
+      let check = document.getElementById(`check${i}`);
+      let patron = document.getElementById(`contenedor${i}`);
+      check.style.backgroundColor = "";
+      patron.style.backgroundColor = "";
     }
-
-    function rgbToHex(rgb) {
-        var rgbValores= rgb.match (/\d+/g);
-        var coloresHex ="#";
-        for (let i = 0; i <3; i++) {
-            var valorHex= parseInt(rgbValores[i]).toString(16);
-            coloresHex += valorHex.length === 1 ? "0" + valorHex : valorHex;
-        }
-        return coloresHex
+    coloresSeleccionados = ["", "", "", ""];
+  }
+  function visualizarIntento() {
+    let contenedor = document.getElementById(`contenedorIntentos`);
+    let newDivFallidos = document.createElement("div");
+    newDivFallidos.className = "intentosFallidos";
+    let intentosCheck = document.createElement("div");
+    intentosCheck.className = "checkFallidos";
+    let intentosPatron = document.createElement("div");
+    intentosPatron.className = "patronFallidos";
+    for (let i = 0; i < 4; i++) {
+      let check = document.getElementById(`check${i}`);
+      let patron = document.getElementById(`contenedor${i}`);
+      var newDivCheck = document.createElement("div");
+      var newDivPatron = document.createElement("div");
+      newDivPatron.style.backgroundColor = patron.style.backgroundColor;
+      newDivPatron.className = "contenedor";
+      intentosPatron.appendChild(newDivPatron);
+      newDivCheck.style.backgroundColor = check.style.backgroundColor;
+      newDivCheck.className = "check";
+      intentosCheck.appendChild(newDivCheck);
     }
-
-   
-
-// Funcion para desordenar paleta, crear Mastermind
-    function crearPatron(paleta) {
-    let paletadesordenada = paleta.sort(function() {
-            return 0.5 - Math.random()
-        
-    })
-    patron = paletadesordenada.slice(0,4);
-    console.log("este es el patron recortador", patron);
-}
-    
-    const boton = document.getElementById('botonValidar');
-    boton.addEventListener("click", function () {
-        if (coloresSeleccionados.every(color => color !== '')) {
-            comprobar(patron, coloresSeleccionados);
-        } else{
-            alert("Debes rellenar todos los colores")
-        }
-
-    });
-
-  
-    function comprobar(patron, coloresSeleccionados) {
-        console.log(patron)
-        console.log(coloresSeleccionados);
-        intentos--;
-        let errores = 0;
-        if(intentos >= 0){
-            for (let i = 0; i < 4; i++) {
-                let check = document.getElementById(`check${i}`)
-                if (patron[i] === coloresSeleccionados[i]) {
-                    check.style.backgroundColor = 'black';
-                    console.log("este es", patron);
-                    console.log("este es", coloresSeleccionados);
-                } else if (patron.includes(coloresSeleccionados[i])) {
-                    errores++;
-                    check.style.backgroundColor = 'white'; 
-                }else {
-                    errores++;
-                }
-            } 
-            if( errores > 0){
-                if(intentos === 0){
-                    window.location.href = "../pages/loser.html"
-                }
-                //Borrar los elementos contenedores
-                    numeroIntentos.textContent = intentos
-                    let contenedorImagen = document.getElementById("intento");
-                
-                    visualizarIntento();
-                    resetIntentos(coloresSeleccionados)
-                // alert(`Has perdido un intento, te quedan ${intentos}` );
-            } else {
-                window.location.href = "../pages/win.html"
-            }
-        } 
-        console.log(intentos)
-
-    }
-        
-    function resetIntentos() {
-        for (let i = 0; i < 4; i++) {
-            let check = document.getElementById(`check${i}`)
-            let patron = document.getElementById(`contenedor${i}`)
-            check.style.backgroundColor = '';
-            patron.style.backgroundColor = '';
-        } 
-        coloresSeleccionados = ['', '', '', ''];
-        console.log(coloresSeleccionados)
-    }
-
-    function visualizarIntento() {
-        let contenedor = document.getElementById(`contenedorIntentos`);
-        let newDivFallidos = document.createElement("div");
-        newDivFallidos.className = "intentosFallidos";
-        let intentosCheck = document.createElement("div");
-        intentosCheck.className = "checkFallidos"
-        let intentosPatron = document.createElement("div");
-        intentosPatron.className = "patronFallidos"
-        for (let i = 0; i < 4; i++) {
-            let check = document.getElementById(`check${i}`);
-            let patron = document.getElementById(`contenedor${i}`);
-            var newDivCheck = document.createElement("div");
-            var newDivPatron = document.createElement("div");
-            newDivPatron.style.backgroundColor = patron.style.backgroundColor;
-            newDivPatron.className = "contenedor";
-            intentosPatron.appendChild(newDivPatron); 
-            newDivCheck.style.backgroundColor = check.style.backgroundColor;
-            newDivCheck.className = "check";
-            intentosCheck.appendChild(newDivCheck); 
-            console.log(check.style.backgroundColor);
-        } 
-        newDivFallidos.appendChild(intentosPatron);
-        newDivFallidos.appendChild(intentosCheck);
-        contenedor.appendChild(newDivFallidos);
-
-    }
-    resetLocal.addEventListener("click", () => {
-        localStorage.clear();            
-    });
+    newDivFallidos.appendChild(intentosPatron);
+    newDivFallidos.appendChild(intentosCheck);
+    contenedor.appendChild(newDivFallidos);
+  }
+  resetLocal.addEventListener("click", () => {
+    localStorage.clear();
+  });
 });

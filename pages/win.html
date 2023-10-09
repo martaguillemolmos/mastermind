@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastermind by Marta Guillem </title>
-    <link href="../css/win.css" rel="stylesheet">
-
-</head>
-<body>
-    <img src="../img/ganador.png">
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mastermind by Marta Guillem</title>
+    <link href="../css/win.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="total">
+      <div class="textoSuperior">
+        <span
+          ><div id="contenedorNombre"></div>
+          ¡Has ganado!</span
+        >
+      </div>
+      <img src="../img/ganador.png" class="imagenPrincipal" />
+      <div class="botonesInferiores">
+        <a href="./mastermind.html"> <div class="boton">Volver a jugar</div> </a>
+        <a href="../index.html"><div class="boton" id="botonResetear">Salir</div> </a>
+      </div>
+    </div>
+    <script src="../js/win.js"></script>
+  </body>
 </html>
