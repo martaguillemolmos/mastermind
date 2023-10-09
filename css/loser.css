@@ -1,0 +1,33 @@
+@media only screen and (max-width: 990px) {
+    html {
+      font-size: 0.7em;
+    }
+  }
+  
+  @media only screen and (max-width: 750px) {
+    html {
+      font-size: 0.5em;
+    }
+  }
+  
+  @media only screen and (max-width: 680px) {
+    html {
+      font-size: 0.33em;
+    }
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(180, 127, 58);
+    background: -moz-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+    background: linear-gradient(0deg, rgba(180, 127, 58, 1) 0%, rgba(253, 183, 29, 1) 50%, rgba(252, 247, 69, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b47f3a", endColorstr="#fcf745", GradientType=1);
+    background-size: auto;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
