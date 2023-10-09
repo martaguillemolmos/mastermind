@@ -1,3 +1,4 @@
-let nombre = localStorage.getItem('name');
-nombre.textContent = nombre
-let visualizarNombre = document.
+let reset = document.getElementById('botonResetear');
+reset.addEventListener("click", () => {
+    localStorage.clear();            
+});
