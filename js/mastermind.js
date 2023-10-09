@@ -112,7 +112,7 @@ contenedores.forEach((contenedor) => {
                     console.log("este es", coloresSeleccionados);
                 } else {
                     errores++;
-                    check.style.backgroundColor = 'blue';
+                    check.style.backgroundColor = 'white';
                 }
             } 
             if( errores > 0){
