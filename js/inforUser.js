@@ -5,9 +5,7 @@ let arrayCajas = [];
 
 botonEnviar.addEventListener("click", (event) => {
   const nombreVacio = nameInput.value == null || nameInput.value == "";
-  console.log("nameInput", nameInput);
-  
-  let expectedNumCajas = 0; // Initialize the expected number of boxes
+  let expectedNumCajas = 0; 
   switch (localStorage.getItem("intento")) {
     case "10":
       expectedNumCajas = 4;
@@ -21,14 +19,11 @@ botonEnviar.addEventListener("click", (event) => {
     default:
       break;
   }
-
   const coloresAsignados = todosColoresAsignados(arrayCajas, expectedNumCajas);
   if (nombreVacio) {
-    console.log("Inserte un nombre");
     alert("El nombre es obligatorio");
     return;
   } else if (coloresAsignados) {
-    console.log("Inserte todos los colores");
     alert("Todos las cajas deben contener color, el blanco no está permitido.");
     return;
   } else {
@@ -37,11 +32,9 @@ botonEnviar.addEventListener("click", (event) => {
     window.location.href = "./mastermind.html";
   }
 });
-
 niveles.addEventListener("click", (event) => {
   const contColores = document.getElementById("contenedorCol");
   contColores.style.display = "flex";
-  console.log(event.target.outerText);
   switch (event.target.outerText) {
     case "Fácil":
       localStorage.setItem("intento", 10);
@@ -62,7 +55,6 @@ niveles.addEventListener("click", (event) => {
       break;
   }
 });
-
 function crearCajaSeleccion(cajas) {
   let boxColors = document.getElementById("boxColors");
   boxColors.textContent = null;
@@ -82,13 +74,13 @@ function crearCajaSeleccion(cajas) {
     boxColors.appendChild(cajaSeleccion);
   }
 }
-
 function guardarColorLocalStorage(colores) {
   for (let index = 0; index < colores; index++) {
     const caja = document.getElementById(`caja${index}`);
-    const colorSeleccionado = document.getElementById(`colorSeleccionado${index}`);
+    const colorSeleccionado = document.getElementById(
+      `colorSeleccionado${index}`
+    );
     colorSeleccionado.addEventListener("change", () => {
-      console.log(colorSeleccionado);
       if (arrayCajas.includes(colorSeleccionado.value)) {
         alert("Este color ya está siendo utilizado");
         return;
@@ -97,24 +89,18 @@ function guardarColorLocalStorage(colores) {
         return;
       } else {
         caja.style.backgroundColor = colorSeleccionado.value;
-        console.log("el nombre de la caja", colorSeleccionado.name);
         arrayCajas[colorSeleccionado.name] = colorSeleccionado.value;
-        console.log(arrayCajas);
       }
     });
   }
 }
-
 function todosColoresAsignados(arrayColores, expectedNumCajas) {
-  console.log("El array", arrayColores);
   let errores = 0;
   for (let index = 0; index < arrayColores.length; index++) {
     if (arrayColores[index] == null || arrayColores[index] == "") {
       errores++;
     }
   }
-  console.log(errores);
-  console.log(arrayColores.length);
   if (errores > 0 || arrayColores.length !== expectedNumCajas) {
     return true;
   } else {
