@@ -29,7 +29,7 @@
     overflow: hidden;
   }
 
-  .fotoMaster {
+  #inforTitulo{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -37,15 +37,23 @@
     justify-content: center;
     align-items: center;
   }
+  .fotoMaster {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.9em;
+  }
   
   #imagenInicio {
-    width: 10em;
-    height: 10em;
+    height: 9em;
   }
   
   h1 {
     font-family: 'Urbanist', sans-serif;
-    font-size: 3em;
+    font-size: 3.4em;
     text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.163);
   
   }
