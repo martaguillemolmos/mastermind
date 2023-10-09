@@ -44,12 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     crearPatron(paleta);
   }
-
-  // Función que valida si existe el color en el Array
-  function existeColor(color, array) {
-    return array.includes(color);
-  }
-
+//Funcion para convertir de rgb a Hex
   function rgbToHex(rgb) {
     var rgbValores = rgb.match(/\d+/g);
     var coloresHex = "#";
@@ -67,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     patron = paletadesordenada.slice(0, 4);
   }
+//Función escucha botón validar
   const boton = document.getElementById("botonValidar");
   boton.addEventListener("click", function () {
     if (coloresSeleccionados.every((color) => color !== "")) {
@@ -75,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Debes rellenar todos los colores");
     }
   });
+
+
   function comprobar(patron, coloresSeleccionados) {
     intentos--;
     let errores = 0;
@@ -93,9 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (errores > 0) {
         if (intentos === 0) {
           window.location.href = "../pages/loser.html";
+          return;
         }
         numeroIntentos.textContent = intentos;
-        let contenedorImagen = document.getElementById("intento");
         visualizarIntento();
         resetIntentos(coloresSeleccionados);
       } else {

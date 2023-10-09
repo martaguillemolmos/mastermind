@@ -17,6 +17,7 @@ botonEnviar.addEventListener("click", (event) => {
       expectedNumCajas = 6;
       break;
     default:
+      expectedNumCajas = 4;
       break;
   }
   const coloresAsignados = todosColoresAsignados(arrayCajas, expectedNumCajas);
