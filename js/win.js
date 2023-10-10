@@ -1,4 +1,4 @@
-let nombre = localStorage.getItem("name");
+let nombre = localStorage.getItem("name") || '';
 let contenedorNombre = document.getElementById("contenedorNombre");
 contenedorNombre.textContent = nombre;
 
