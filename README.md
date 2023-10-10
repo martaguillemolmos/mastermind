@@ -22,6 +22,7 @@ En este proyecto nos solicitan emular el juego del Mastermind con el stack JS, C
 -  [Pantalla perdedor](#pantalla-perdedor)
 -  [Media Query](#media-query)
 -  [Mejoras](#mejoras)
+-  [Contacto] (#contacto)
 -  [GitHub Pages](#github-pages-link)
 
 ## Tecnologias utilizadas:
@@ -110,6 +111,12 @@ Las mejoras que se podrían realizar al proyecto son las siguientes:
 1. En HTML: El uso de botones en vez de la utilización de div.
 2. Mejora en la nomenclatura del contenido, dependiendo de las propiedades de cada uno de ellos.
 3. GitHub: El uso de prefijos previos a la redacción del commit.
+
+---
+## Contacto
+Puedes contactar conmigo a través de los siguientes medios:
+Correo electronico: martaguillem@outlook.es
+Linkedin: https://www.linkedin.com/in/marta-guillem-olmos-b26b9b293/
 
 ---
 ## GitHub Pages
