@@ -107,9 +107,9 @@ Este es el resultado desde un dispositivo móvil.
 ---
 ## Mejoras
 Las mejoras que se podrían realizar al proyecto son las siguientes:
-1- En HTML: El uso de botones en vez de la utilización de div.
-2- Mejora en la nomenclatura del contenido, dependiendo de las propiedades de cada uno de ellos.
-3- GitHub: El uso de prefijos previos a la redacción del commit.
+1. En HTML: El uso de botones en vez de la utilización de div.
+2. Mejora en la nomenclatura del contenido, dependiendo de las propiedades de cada uno de ellos.
+3. GitHub: El uso de prefijos previos a la redacción del commit.
 
 ---
 ## GitHub Pages
