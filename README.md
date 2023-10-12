@@ -2,9 +2,7 @@
 
 ---
 
-#  Mastermind
- 🧠[Mastermind](https://martaguillemolmos.github.io/mastermind/) 🧠
-
+# Mastermind
  ---
 
 **Tercer proyecto del Bootcamp Full Stack Developer en GeekHubs**
@@ -13,19 +11,19 @@ En este proyecto nos solicitan emular el juego del Mastermind con el stack JS, C
 
 ## Contenidos
 
--  [Tecnologías utilizadas](#tecnologias-utilizadas)
--  [Inicio](#inicio)
--  [Instrucciones](#instrucciones)
--  [Pantalla usuario](#pantalla-usuario)
--  [Mastermind](#mastermind)
--  [Pantalla ganador](#pantalla-ganador)
--  [Pantalla perdedor](#pantalla-perdedor)
--  [Media Query](#media-query)
--  [Mejoras](#mejoras)
--  [Contacto] (#contacto)
--  [GitHub Pages](#github-pages-link)
+-  📌 [Tecnologías utilizadas](#tecnologias-utilizadas)
+-  🚀 [Inicio](#inicio)
+-  🎮 [Instrucciones](#instrucciones)
+     -  [Pantalla usuario](#pantalla-usuario)
+     -  [Mastermind](#mastermind)
+     -  [Pantalla ganador](#pantalla-ganador)
+     -  [Pantalla perdedor](#pantalla-perdedor)
+- 📱 [Media Query](#media-query)
+- 🌟 [Mejoras](#mejoras)
+- ✒️ [Contacto] (#contacto)
+- 🔗 [GitHub Pages](#github-pages-link)
 
-## Tecnologias utilizadas:
+## 📌 Tecnologias utilizadas:
 Las tecnologías que hemos utilizado para desarrollar el proyecto son las siguientes:
 <div align ="center">
     <img src="./img/tecnologia.png" width="500">
@@ -37,21 +35,21 @@ Por otro lado, la plantaforma que hemos utilizado para diseñar todo el contenid
 </div>
 
 ---
-## Inicio:
+## 🚀 Inicio:
 En el diseño de la pantalla de inicio, contiene las opciones de cambiar a las pantallas que contienen las instrucciones del juego o por el contrario, al juego.
 <div align="center">
     <img src="./img/pantallaInicio.png" alt="pantalla-inicio" width="400px">
 </div>
 
 ---
-## Instrucciones
+## 🎮 Instrucciones
 Al hacer click en "Instrucciones", nos dirige a la siguiente pantalla, donde obtenemos información a acerca de cómo debemos navegar en las pantallas y, las reglas del Mastermind.
 <div align="center">
     <img src="./img/pantallaInstrucciones.png" alt="pantalla-instrucciones" width="400px">
 </div>
 
 ---
-## Pantalla usuario
+### Pantalla usuario
 Antes de iniciar el juego, se le solicitará al usuario que introduzca el nombre y seleccione el nivel de dificultad. 
 Al seleccionar el nivel de dificultad, se desplegará una serie de contenedores vacíos que deberá colorear. Y, estos serán los colores que utilizaremos en el juego.
 <div align="center">
@@ -62,7 +60,7 @@ Para poder pasar de pantalla, se deberá rellenar todos los campos.
 En caso que el usuario no quiera continuar jugando, podrá volver a la pantalla de inicio al pulsar en "Volver".
 
 ---
-## Mastermind
+###  Mastermind
 ¡Empieza el juego! En esta pantalla aparece en la parte superior, el número de intentos que tenemos que va variando en función de los intentos que tenemos disponibles en cada momento.
 En la parte central, se encuentran los colores que hemos recuperado de la pantalla anterior y, el tablero vacío. Aquí el usuario deberá seleccionar la combinación de colores ganadora y, para poder comprobar si coincide con la combinación de Mastermind, deberá pulsar sobre el botón verificar.
 <div align="center">
@@ -76,7 +74,7 @@ Por otro lado, en caso que nuestro patrón sea identico a la combinación que ha
 Si, durante la partida el usuario hace click sobre "Volver a inicio" se borrará todo el contenido almacenado en LocalStorage.
 
 ---
-## Pantalla ganador
+###  Pantalla ganador
 En caso que hayamos acertado la combinación ganadora, aparecerá en pantalla el nombre que haya indicado el usuario junto con el texto ¡has ganado!
 <div align="center">
    <img src="./img/pantallaGanador.png" alt="pantalla-ganador" width="400px">
@@ -85,7 +83,7 @@ Si el usuario hace click en "volver a jugar", volverá a la pantalla de Mastermi
 Por el contrario, si pulsa en "Salir" se borrará el contenido almacenado en LocalStorage y volverá a la pantalla de inicio.
 
 ---
-## Pantalla perdedor
+### Pantalla perdedor
 En caso que no hayamos acertado la combinación ganadora, aparecerá en pantalla el nombre que haya indicado el usuario junto con el texto ¡has perdido!
 <div align="center">
    <img src="./img/pantallaPerdedor.png" alt="pantalla-perdedor" width="400px">
@@ -94,7 +92,7 @@ Si el usuario hace click en "volver a jugar", volverá a la pantalla de Mastermi
 Por el contrario, si pulsa en "Salir" se borrará el contenido almacenado en LocalStorage y volverá a la pantalla de inicio.
 
 ---
-## Media Query
+## 📱 Media Query
 Este proyecto utiliza consultas de medios para garantizar que la página web se vea y funcione correctamente en diferentes tamaños de pantalla.
 
 Además de estos ajustes de tamaño de fuente, tenga en cuenta que CSS también controla el desbordamiento horizontal oculto (overflow-x: oculto) y el desbordamiento vertical automático (overflow-y: auto).
@@ -106,18 +104,19 @@ Este es el resultado desde un dispositivo móvil.
 </div>
 
 ---
-## Mejoras
-Las mejoras que se podrían realizar al proyecto son las siguientes:
+## 🌟 Mejoras
+La mejora que se tendría que realizar al proyecto es:
 1. En HTML: El uso de botones en vez de la utilización de div.
-2. Mejora en la nomenclatura del contenido, dependiendo de las propiedades de cada uno de ellos.
-3. GitHub: El uso de prefijos previos a la redacción del commit.
+- Por otro lado, para futuros proyecto, tendríamos que aplicar lo siguiente:
+1. Mejora en la nomenclatura del contenido, dependiendo de las propiedades de cada uno de ellos.
+2. GitHub: El uso de prefijos previos a la redacción del commit.
 
 ---
-## Contacto
+## ✒️ Contacto
 Puedes contactar conmigo a través de los siguientes medios:
-Correo electronico: martaguillem@outlook.es
-Linkedin: https://www.linkedin.com/in/marta-guillem-olmos-b26b9b293/
+ - [GitHub]((https://github.com/martaguillemolmos)) - [LinkedIn](https://www.linkedin.com/in/marta-guillem-olmos-b26b9b293/)
 
 ---
-## GitHub Pages
-https://martaguillemolmos.github.io/mastermind/
+##🔗 GitHub Pages
+¡Empieza el desafío Mastermind!, accede a GitHub Pages, con un sólo click:
+ 🧠[Mastermind](https://martaguillemolmos.github.io/mastermind/) 🧠
