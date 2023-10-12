@@ -2,7 +2,7 @@
 
 ---
 
-# Mastermind
+# Mastermind 🧠
  ---
 
 **Tercer proyecto del Bootcamp Full Stack Developer en GeekHubs**
@@ -117,6 +117,6 @@ Puedes contactar conmigo a través de los siguientes medios:
  - [GitHub]((https://github.com/martaguillemolmos)) - [LinkedIn](https://www.linkedin.com/in/marta-guillem-olmos-b26b9b293/)
 
 ---
-##🔗 GitHub Pages
+## 🔗 GitHub Pages
 ¡Empieza el desafío Mastermind!, accede a GitHub Pages, con un sólo click:
- 🧠[Mastermind](https://martaguillemolmos.github.io/mastermind/) 🧠
+ 🧠 https://martaguillemolmos.github.io/mastermind/ 🧠
